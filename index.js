@@ -9,7 +9,7 @@ let days = [
   "Friday",
   "Saturday",
 ];
-let dateFormat = `${days[now.getDay()]}:${now.getHours()}:${now.getMinutes()}`;
+let dateFormat = `${days[now.getDay()]} ${now.getHours()}:${now.getMinutes()}`;
 let datePlacement = document.querySelector("#date");
 datePlacement.innerHTML = `${dateFormat}`;
 
@@ -32,4 +32,7 @@ function showTemp(response) {
   let temp = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#temperature");
   currentTemp.innerHTML = `☀${temp}℃`;
+  let windspeed = data.wind.speed;
+  let winddisplay = document.querySelector(`#wind`);
+  winddisplay.innerHTML = `wind: ${windspeed}km/h`;
 }
