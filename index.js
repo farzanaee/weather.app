@@ -31,5 +31,5 @@ form.addEventListener("submit", cityUpdate);
 function showTemp(response) {
   let temp = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#temperature");
-  currentTemp.innerHTML = `${temp}℃`;
+  currentTemp.innerHTML = `☀${temp}℃`;
 }
