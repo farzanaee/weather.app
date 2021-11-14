@@ -1,37 +1,49 @@
-let now = new Date();
+// current day and time
+function currentTime() {
+  let now = new Date();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  let hour = now.getHours();
+  let minute = now.getMinutes();
+  if (minute < 10) {
+    minute = `0${now.getMinutes()}`;
+  }
+  let currentTime = document.querySelector(".time");
+  currentTime.innerHTML = `${day} ${hour}:${minute}`;
+}
+currentTime();
 
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let dateFormat = `${days[now.getDay()]} ${now.getHours()}:${now.getMinutes()}`;
-let datePlacement = document.querySelector("#date");
-datePlacement.innerHTML = `${dateFormat}`;
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-//challenge 2
-function cityUpdate(event) {
+  return days[day];
+}
+
+function handleSubmit(event) {
   event.preventDefault();
-  let input = document.querySelector("#location");
-  let cityPlacement = document.querySelector("#city");
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
 
-  cityPlacement.innerHTML = `${input.value}`;
-  let city = input.value;
+function search(city) {
   let apiKey = `44c9a788f03ef7c8a30b92658d1157c7`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showTemp);
+  axios.get(apiUrl).then(displayTemperature);
 }
-let form = document.querySelector("form");
-form.addEventListener("submit", cityUpdate);
 
-function showTemp(response) {
-  let temp = Math.round(response.data.main.temp);
-  let currentTemp = document.querySelector("#temperature");
-  currentTemp.innerHTML = `☀${temp}℃`;
+//reflect current city weather conditions
+function displayTemperature(response) {
+  let temperatureElement = document.querySelector("#temperature");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
