@@ -33,11 +33,25 @@
         <span class="day" id="date">Sunday 9:00 AM</span>
       </h1>
       <div class="row">
-        <div id="temperature" class="col-6">☀32° C</div>
-        <div id="description" class="col-6">
-          <span class="precipitation"> precipitation: 40% </span>
-          <br />
-          <span class="wind"> Wind: 3km/h</span>
+        <div class="col-7">
+          <div class="clearfix weather-temperature">
+            <img
+              src="http://openweathermap.org/img/wn/04d@2x.png"
+              alt="cloudy"
+              class="float-left"
+              id="icon"
+            /><strong id="temperature">27</strong>
+            <span class="units"
+              ><a href="#" class="active" id="celsiusLink">°C</a> |
+              <a href="#" class="inactive" id="FahrenheitLink">°F</a></span
+            >
+          </div>
+        </div>
+        <div class="col-5">
+          <ul>
+            <li><span id="humidity">Humidity: 86%</span></li>
+            <li><span id="wind">Wind: 23 km/h</span></li>
+          </ul>
         </div>
       </div>
       <div id="future" class="row">
