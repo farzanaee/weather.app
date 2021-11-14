@@ -21,51 +21,57 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="container">
-      <form id="citySearch">
-        <input id="location" type="text" placeholder="Type a city" />
-
-        <button id="searchbutton" type="submit">search</button>
-      </form>
-      <h1>
-        <span class="place" id="city">Tehran</span>
-        <br />
-        <span class="day" id="date">Sunday 9:00 AM</span>
-      </h1>
-      <div class="row">
-        <div id="temperature" class="col-6">☀32° C</div>
-        <div id="description" class="col-6">
-          <span class="precipitation"> precipitation: 40% </span>
-          <br />
-          <span class="wind"> Wind: 3km/h</span>
+     <div class="container">
+      <div class="weatherAppWrapper">
+      <div class="weatherApp">
+  <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Type a city.."
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary w-100"
+                  id="searchCity"
+                />
+              </div>
+            </div>
+          </form>
+        <div class="overview">
+        <h1><span class="city">Baguio</span></h1>
+        <ul>
+          <li><span class="time">Tuesday 5:00 AM</span></li>
+          <li><span id="description">Cloudy</span></li>
+          </div>
+        </ul>
+        <div class="row">
+          <div class="col-7">
+            <div  class="clearfix weather-temperature">
+            <img src="http://openweathermap.org/img/wn/04d@2x.png"
+              alt="cloudy" class="float-left" id="icon"
+            /><strong id="temperature">27</strong> <span class="units"><a href="#" class="active" id="celsiusLink">°C</a> | <a href="#" class="inactive" id="FahrenheitLink">°F</a></span>
+          </div>
+          </div>
+          <div class="col-5">
+            <ul>
+              <li><span id="humidity">Humidity: 86%</span></li>
+              <li><span id="wind">Wind: 23 km/h</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="weather-forecast" id="forecast">
+          
         </div>
       </div>
-      <div id="future" class="row">
-        <div id="dayleft" class="col">
-          Mon
-          <br />
-          <div class="forecast">34° C</div>
-        </div>
-        <div id="day" class="col">
-          Tue
-          <br />
-          <div class="forecast">34° C</div>
-        </div>
-        <div id="day" class="col">
-          Wed
-          <br />
-          <div class="forecast">31° C</div>
-        </div>
-        <div id="day" class="col">
-          Thu
-          <br />
-          <div class="forecast">31° C</div>
-        </div>
-        <div id="dayright" class="col">
-          Fri
-          <br />
-          <div class="forecast">30° C</div>
-        </div>
+      
       </div>
     </div>
     link to <a href="https://github.com/farzanaee/weather.app">github</a>
