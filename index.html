@@ -1,85 +1,53 @@
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather Report</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
-      crossorigin="anonymous"
-    />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  </head>
-  <body>
-    <div class="containerPage" id="whole-page">
-        <form id="search-form" class="mb-3">
-            <div class="row">
-                <div class="col-9">
-                    <input type="search" placeholder="Type a city.." Class="form-control" id="city-input"/>
-                </div>
-                <div class="col-3">
-                    <input type="submit" value="Search" class="btn btn-primary w-100"/>
-                </div>
-            </div>
-        </form>
-    
-        <div class="container" id="current-city-weather">
-
-        <div class="row align-items-start">
-            <div class="col-6">
-                <h1 id="city-name">New York</h1>
-                <ul>
-                    <li>
-                        <span>Last updated:</span>
-                        <span id="date">Friday 10:00</span>
-                    </li>
-                    <li id="weather-description">Clear skies</li>
-                    
-                </ul>
-            </div>
-        </div>
-        
-    <div class="row">
-        <div class="col-6">
-            <img id="current-weather-description-icon" src=" " alt="" />
-            <span  id="current-temperature"><strong>9</strong></span> 
-            <span class="units" id="celsius"><a href="#" id="c-link" class="degree">°C</a>|</span>
-            <span class="units" id="fahrenheit"><a href="#" id="f-link" class="degree">°F</a></span>
-            
-        </div>
-        <div class="col-6">
-           <ul> <li >
-                        <span>Humidity:</span>
-                        <span id= "humidity">50</span> 
-                        <span>%</span>
-                    
-                    </li>
-                    <li >
-                        <span>Wind Speed:</span>
-                        <span id="wind-speed">5</span>
-                        <span>km/hr</span>
-                    
-                    </li>
-            </ul>
+    <button id="searchbutton" type="submit">search</button>
+      </form>
+      <h1>
+        <span class="place" id="city">Tehran</span>
+        <br />
+        <span class="day" id="date">Sunday 9:00 AM</span>
+      </h1>
+      <div class="row">
+        <div id="temperature" class="col-6">🌤 39° C</div>
+        <div id="description" class="col-6">
+          <p>
+            <span class="feelsLike"> Feels Like: 39° C </span>
+            <br />
+            <span class="humidity"> Humidity: 22% </span>
+            <br />
+            <span class="wind">` Wind: 8km/h</span>
+          </p>
         </div>
       </div>
-</div>
-    </body> <small>
-      link to <a href="https://github.com/farzanaee/weather.app">github</a>
-    </small>
-
-
-<script src="src/index.js"></script> 
-
+      <div id="future" class="row">
+        <div id="dayleft" class="col">
+          Mon
+          <br />
+          <div class="forecast">34° C</div>
+        </div>
+        <div id="day" class="col">
+          Tue
+          <br />
+          <div class="forecast">34° C</div>
+        </div>
+        <div id="day" class="col">
+          Wed
+          <br />
+          <div class="forecast">31° C</div>
+        </div>
+        <div id="day" class="col">
+          Thu
+          <br />
+          <div class="forecast">31° C</div>
+        </div>
+        <div id="dayright" class="col">
+          Fri
+          <br />
+          <div class="forecast">30° C</div>
+        </div>
+      </div>
+    </div>
+    link to <a href="https://github.com/farzanaee/weather.app">github</a>
+    <script src="index.js"></script>
+  </body>
 </html>
+
