@@ -1,76 +1,138 @@
 body {
-  display: block;
-  margin: 0 auto;
-  padding: 15px;
-  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-  width: 40%;
-}
-form {
-  text-align: center;
-  position: relative;
-  top: 10px;
-}
 h1 {
-  font-weight: 200;
-  color: #300321;
-  font-size: 25px;
-  font-family: "Poppins", sans-serif;
-  padding: 20px;
-  padding-bottom: 20px;
-  text-align: center;
+  color: black;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 26px;
+  margin-bottom: 3px;
+  margin-top: 25px;
+  font-family: "Heebo", sans-serif;
+  text-transform: capitalize;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: rgb(135, 135, 135);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19px;
+  font-family: " Heebo ", sans-serif;
+}
+
+li:first-letter {
+  text-transform: capitalize;
+}
+
+.footer {
+  padding-left: 330px;
+  font-size: 12px;
+}
+
+.overview {
+  margin-bottom: 20px;
+}
+
+.weather-temperature img {
+  margin-right: 10px;
+  float: left;
+  height: 64px;
+  width: 64px;
+}
+
+.weather-temperature strong {
+  color: black;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1;
+  font-family: "Heebo", sans-serif;
+}
+
+.weather-temperature .units {
   position: relative;
-  top: 10px;
+  font-size: 16px;
+  top: -34px;
+  font-family: " Heebo ", sans-serif;
+  font-weight: 400;
 }
 
-.container {
-  padding: 15px;
-  border: 5px solid #300321;
-  border-radius: 20px;
-  display: block;
-  margin: 0 auto;
+.weatherApp {
+  padding: 20px;
+  padding-bottom: 25px;
+  border: 3px solid black;
+  border-radius: 5px;
+  background: #ddfcff;
+  box-shadow: #ffff4f -9px 9px, black -12px 6px, black -12px 12px,
+    black -6px 12px;
+  margin-bottom: 20px;
 }
 
-#location {
-  border: 3px solid #5b6275;
-  border-radius: 20px;
-  padding: 10px 10px 10px;
-  width: 300px;
+.weatherAppWrapper {
+  max-width: 600px;
+  margin: 30px auto;
 }
-#searchbutton {
-  padding: 10px;
-  border-radius: 20px;
-  border: 3px solid #5b6275;
 
-  width: 100px;
+.active {
+  text-decoration: none;
+  color: rgb(33, 33, 33);
+}
+
+.active:hover {
+  color: rgb(33, 33, 33);
+}
+
+.inactive {
+  text-decoration: none;
+  color: #979d9d;
+}
+
+.inactive:hover {
+  color: rgb(33, 33, 33);
+}
+
+#searchCity {
+  background: #feff50;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+#searchCity:hover {
+  background: black;
+  color: #feff50;
   transition: all 200ms ease-in-out;
 }
 
-.place {
-  font-weight: bold;
-  font-size: 50px;
+#city-input {
+  border: 2px solid black;
+  font-family: " Heebo ", sans-serif;
 }
-.day {
-  font-weight: 500;
-  color: #5b6275;
-  font-size: 20px;
-}
-#temperature {
-  font-size: 30px;
-  font-family: "Poppins", sans-serif;
-  color: #300321;
-  font-weight: 500;
-}
-#description {
-  color: #300321;
-  font-size: 14px;
-  font-weight: 300;
-}
-.row {
+
+.weather-forecast {
+  margin-top: 20px;
   text-align: center;
-  padding: 30px 100px;
+  color: #000;
+  font-family: "Heebo", sans-serif;
 }
-.forecast {
-  font-size: 14px;
-  color: #300321;
+
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+}
+
+.weather-forecast-temperatures {
+  font-size: 13px;
 }
