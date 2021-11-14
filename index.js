@@ -31,6 +31,7 @@ form.addEventListener("submit", cityUpdate);
 function showTemp(response) {
   let temp = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#temperature");
+  currentTemp.innerHTML = `🌤 ${temp}° C`;
   let feelTemp = Math.round(response.data.main.feels_like);
   let currentFeel = document.querySelector(".feelsLike");
   currentFeel.innerHTML = `Feels Like: ${feelTemp}° C`;
