@@ -32,7 +32,25 @@ function showTemp(response) {
   let temp = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#temperature");
   currentTemp.innerHTML = `☀${temp}℃`;
-  let windspeed = data.wind.speed;
-  let winddisplay = document.querySelector(`#wind`);
-  winddisplay.innerHTML = `wind: ${windspeed}km/h`;
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let iconElement = document.querySelector("#icon");
+  let cityPlacement = document.querySelector(".city");
+
+  celsiusTemperature = response.data.main.temp;
+  celsiusWind = response.data.wind.speed;
+
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+  cityPlacement.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
+
+  getForecast(response.data.coord);
 }
